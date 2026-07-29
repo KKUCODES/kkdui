@@ -20,7 +20,14 @@ const sourceVisible = ref(false);
         :aria-expanded="sourceVisible"
         @click="sourceVisible = !sourceVisible"
       >
-        <span aria-hidden="true">{{ sourceVisible ? "⌃" : "⌄" }}</span>
+        <svg
+          class="demo-block__icon"
+          :class="{ 'demo-block__icon--expanded': sourceVisible }"
+          viewBox="0 0 16 16"
+          aria-hidden="true"
+        >
+          <path d="m4 6 4 4 4-4" />
+        </svg>
         {{ sourceVisible ? "收起源码" : "查看源码" }}
       </button>
     </div>
