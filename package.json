@@ -1,0 +1,55 @@
+{
+  "name": "kkdui",
+  "version": "0.1.0",
+  "description": "KK 的 Vue 3 UI 组件库，为后台管理系统而设计。",
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./style.css": "./dist/style.css"
+  },
+  "scripts": {
+    "build": "vite build && vue-tsc -p tsconfig.build.json --emitDeclarationOnly",
+    "typecheck": "vue-tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "pack:check": "npm pack --dry-run"
+  },
+  "keywords": [
+    "kkdui",
+    "vue",
+    "vue3",
+    "components",
+    "ui",
+    "admin"
+  ],
+  "license": "UNLICENSED",
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/test-utils": "^2.4.6",
+    "jsdom": "^26.1.0",
+    "typescript": "^5.5.4",
+    "vite": "^6.0.7",
+    "vitest": "^2.1.9",
+    "vue": "^3.5.13",
+    "vue-tsc": "^2.2.0"
+  }
+}

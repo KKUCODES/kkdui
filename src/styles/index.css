@@ -1,0 +1,35 @@
+:root {
+  --k-color-primary: #257360;
+  --k-color-primary-hover: #1e604f;
+  --k-color-primary-soft: rgba(37, 115, 96, 0.12);
+  --k-color-on-primary: #ffffff;
+  --k-color-text: #1d2725;
+  --k-color-text-muted: #65706d;
+  --k-color-text-subtle: #929d99;
+  --k-color-border: rgba(114, 131, 126, 0.28);
+  --k-color-border-hover: rgba(72, 94, 88, 0.42);
+  --k-color-divider: rgba(72, 94, 88, 0.14);
+  --k-color-surface: #ffffff;
+  --k-color-surface-muted: #f5f7f6;
+  --k-color-surface-hover: rgba(37, 115, 96, 0.07);
+  --k-color-control-surface: rgba(255, 255, 255, 0.72);
+  --k-color-control-surface-focus: rgba(255, 255, 255, 0.94);
+  --k-color-focus-ring: rgba(37, 115, 96, 0.12);
+  --k-color-danger: #b34a4a;
+  --k-color-danger-hover: #993f3f;
+  --k-color-on-danger: #ffffff;
+  --k-color-danger-ring: rgba(179, 74, 74, 0.12);
+  --k-color-success: #28745c;
+  --k-color-warning: #9a6a21;
+  --k-radius-control: 0.78rem;
+  --k-ease-spring: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --k-z-dropdown: 1020;
+  --k-z-popover: 1040;
+  --k-z-drawer: 1080;
+  --k-z-dialog: 1100;
+  --k-z-toast: 1200;
+  --k-z-tooltip: 1300;
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC",
+    "Microsoft YaHei", "Segoe UI", sans-serif;
+  --font-mono: "SFMono-Regular", "SF Mono", Consolas, monospace;
+}
