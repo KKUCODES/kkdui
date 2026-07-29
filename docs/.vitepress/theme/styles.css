@@ -200,9 +200,43 @@
   font-size: 0.8rem;
 }
 
+.component-reference__table {
+  overflow-x: auto;
+}
+
+.component-reference__types {
+  margin-top: 1.25rem;
+  color: var(--vp-c-text-2);
+  font-size: 0.86rem;
+}
+
+.component-reference__fallback {
+  width: 100%;
+  min-height: 4rem;
+  display: grid;
+  place-items: center;
+  color: var(--vp-c-text-3);
+  font-size: 0.78rem;
+}
+
+.catalog-demo {
+  width: 100%;
+  min-width: 0;
+}
+
+.catalog-demo__cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
 @media (max-width: 640px) {
   .demo-block__preview {
     padding: 1.1rem;
+  }
+
+  .catalog-demo__cards {
+    grid-template-columns: 1fr;
   }
 
   .vp-doc table {
