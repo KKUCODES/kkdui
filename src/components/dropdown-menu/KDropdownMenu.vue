@@ -7,6 +7,7 @@ import {
   watch,
   type CSSProperties
 } from "vue";
+import { MoreIcon } from "../../icons";
 import type {
   KDropdownMenuItem,
   KDropdownMenuProps
@@ -246,11 +247,7 @@ onBeforeUnmount(removeGlobalListeners);
       @keydown="handleTriggerKeydown"
     >
       <slot name="trigger" :open="open">
-        <svg viewBox="0 0 20 20" aria-hidden="true">
-          <circle cx="4" cy="10" r="1.25" />
-          <circle cx="10" cy="10" r="1.25" />
-          <circle cx="16" cy="10" r="1.25" />
-        </svg>
+        <MoreIcon />
       </slot>
     </button>
 

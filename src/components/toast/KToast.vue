@@ -6,6 +6,13 @@ import {
   ref,
   watch
 } from "vue";
+import {
+  CloseIcon,
+  ErrorIcon,
+  InfoIcon,
+  SuccessIcon,
+  WarningIcon
+} from "../../icons";
 import type { KToastProps } from "./types";
 
 const props = withDefaults(defineProps<KToastProps>(), {
@@ -123,22 +130,10 @@ onBeforeUnmount(() => {
     @focusout="resumeTimer"
   >
     <span class="k-toast__icon" aria-hidden="true">
-      <svg v-if="tone === 'success'" viewBox="0 0 20 20">
-        <circle cx="10" cy="10" r="7.5" />
-        <path d="m6.5 10 2.3 2.3 4.7-5" />
-      </svg>
-      <svg v-else-if="tone === 'warning'" viewBox="0 0 20 20">
-        <path d="M8.6 3.1 2.4 14.2a1.8 1.8 0 0 0 1.6 2.7h12a1.8 1.8 0 0 0 1.6-2.7L11.4 3.1a1.6 1.6 0 0 0-2.8 0Z" />
-        <path d="M10 7v4M10 14h.01" />
-      </svg>
-      <svg v-else-if="tone === 'danger'" viewBox="0 0 20 20">
-        <circle cx="10" cy="10" r="7.5" />
-        <path d="m7.2 7.2 5.6 5.6m0-5.6-5.6 5.6" />
-      </svg>
-      <svg v-else viewBox="0 0 20 20">
-        <circle cx="10" cy="10" r="7.5" />
-        <path d="M10 9v4M10 6.3h.01" />
-      </svg>
+      <SuccessIcon v-if="tone === 'success'" />
+      <WarningIcon v-else-if="tone === 'warning'" />
+      <ErrorIcon v-else-if="tone === 'danger'" />
+      <InfoIcon v-else />
     </span>
 
     <div class="k-toast__copy">
@@ -162,9 +157,7 @@ onBeforeUnmount(() => {
       aria-label="关闭通知"
       @click="emit('dismiss', id)"
     >
-      <svg viewBox="0 0 16 16" aria-hidden="true">
-        <path d="m4 4 8 8M12 4l-8 8" />
-      </svg>
+      <CloseIcon />
     </button>
 
     <div

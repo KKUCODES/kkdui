@@ -8,6 +8,7 @@ import {
   watch,
   type CSSProperties
 } from "vue";
+import { CloseIcon } from "../../icons";
 import type {
   KPopoverPlacement,
   KPopoverProps
@@ -304,9 +305,7 @@ defineExpose({
             aria-label="关闭"
             @click="closePopover('button', true)"
           >
-            <svg viewBox="0 0 16 16" aria-hidden="true">
-              <path d="m4 4 8 8m0-8-8 8" />
-            </svg>
+            <CloseIcon />
           </button>
         </header>
 

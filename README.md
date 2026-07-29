@@ -12,10 +12,16 @@ npm install kkdui
 
 ```ts
 import { KButton, KInput } from "kkdui";
+import { SearchIcon } from "kkdui/icons";
 import "kkdui/style.css";
 ```
 
 ## 当前组件
+
+基础组件：
+
+- `KIcon`：统一 SVG 图标的尺寸、颜色和无障碍语义。
+- 图标通过 `kkdui/icons` 按需导入，现有组件内部也复用同一套图标。
 
 表单与筛选：
 

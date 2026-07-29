@@ -1,5 +1,10 @@
 <script setup lang="ts">
 import { computed, useId } from "vue";
+import {
+  ChevronDownIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon
+} from "../../icons";
 import type { KPaginationProps } from "./types";
 
 type PaginationItem =
@@ -233,13 +238,9 @@ function updatePageSize(event: Event): void {
             {{ option }} 条/页
           </option>
         </select>
-        <svg
+        <ChevronDownIcon
           class="k-pagination__select-icon"
-          viewBox="0 0 16 16"
-          aria-hidden="true"
-        >
-          <path d="m4 6 4 4 4-4" />
-        </svg>
+        />
       </div>
 
       <div class="k-pagination__pager">
@@ -250,9 +251,7 @@ function updatePageSize(event: Event): void {
           aria-label="上一页"
           @click="updatePage(currentPage - 1)"
         >
-          <svg viewBox="0 0 16 16" aria-hidden="true">
-            <path d="m10 3-5 5 5 5" />
-          </svg>
+          <ChevronLeftIcon />
         </button>
 
         <div class="k-pagination__pages">
@@ -294,9 +293,7 @@ function updatePageSize(event: Event): void {
           aria-label="下一页"
           @click="updatePage(currentPage + 1)"
         >
-          <svg viewBox="0 0 16 16" aria-hidden="true">
-            <path d="m6 3 5 5-5 5" />
-          </svg>
+          <ChevronRightIcon />
         </button>
       </div>
     </div>

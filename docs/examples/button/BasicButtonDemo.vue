@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import { SearchIcon } from "../../../src/icons";
+</script>
+
 <template>
   <div class="demo-stack">
     <div class="demo-row">
@@ -10,6 +14,7 @@
       <KButton size="small">小尺寸</KButton>
       <KButton>中尺寸</KButton>
       <KButton size="large">大尺寸</KButton>
+      <KButton :icon="SearchIcon">带图标</KButton>
     </div>
   </div>
 </template>

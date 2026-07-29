@@ -6,6 +6,7 @@ import {
   useId,
   watch
 } from "vue";
+import AlertWarningIcon from "../../icons/internal/AlertWarningIcon.vue";
 import KButton from "../button/KButton.vue";
 import KDialog from "../dialog/KDialog.vue";
 import type { KDialogCloseReason } from "../dialog/types";
@@ -176,11 +177,7 @@ function clearCountdown(): void {
         :class="`k-alert-dialog__icon--${tone}`"
         aria-hidden="true"
       >
-        <svg viewBox="0 0 20 20">
-          <path d="M10 6v5" />
-          <path d="M10 14.5h.01" />
-          <path d="M8.5 2.8 2.2 14a2 2 0 0 0 1.75 3h12.1a2 2 0 0 0 1.75-3L11.5 2.8a1.72 1.72 0 0 0-3 0Z" />
-        </svg>
+        <AlertWarningIcon />
       </span>
       <div class="k-alert-dialog__message">
         <slot />

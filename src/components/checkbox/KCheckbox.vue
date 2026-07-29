@@ -7,6 +7,8 @@ import {
   watch,
   type CSSProperties
 } from "vue";
+import { MinusIcon } from "../../icons";
+import CheckboxCheckIcon from "../../icons/internal/CheckboxCheckIcon.vue";
 import type { KCheckboxProps } from "./types";
 
 defineOptions({
@@ -86,16 +88,8 @@ function handleChange(event: Event): void {
       @change="handleChange"
     />
     <span class="k-checkbox__control" aria-hidden="true">
-      <svg viewBox="0 0 16 16">
-        <path
-          v-if="indeterminate"
-          d="M4 8h8"
-        />
-        <path
-          v-else
-          d="m3.5 8 3 3 6-6"
-        />
-      </svg>
+      <MinusIcon v-if="indeterminate" />
+      <CheckboxCheckIcon v-else />
     </span>
     <span
       v-if="label || description || $slots.default"

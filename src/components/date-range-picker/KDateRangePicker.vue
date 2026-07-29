@@ -3,6 +3,7 @@ import {
   computed,
   useId
 } from "vue";
+import { ArrowRightIcon, CloseIcon } from "../../icons";
 import type {
   KDateRangeGranularity,
   KDateRangeGranularityChange,
@@ -299,13 +300,9 @@ function updateGranularity(event: Event): void {
       />
     </label>
 
-    <svg
+    <ArrowRightIcon
       class="k-date-range__separator"
-      viewBox="0 0 20 12"
-      aria-hidden="true"
-    >
-      <path d="M2 6h16m-4-4 4 4-4 4" />
-    </svg>
+    />
 
     <label class="k-date-range__field" :for="endId">
       <span>{{ endLabel }}</span>
@@ -332,9 +329,7 @@ function updateGranularity(event: Event): void {
       aria-label="清除日期范围"
       @click="clear"
     >
-      <svg viewBox="0 0 16 16" aria-hidden="true">
-        <path d="m4 4 8 8M12 4l-8 8" />
-      </svg>
+      <CloseIcon />
     </button>
 
     <div

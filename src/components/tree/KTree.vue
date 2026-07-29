@@ -5,6 +5,12 @@ import {
   ref,
   watch
 } from "vue";
+import {
+  MinusIcon,
+  SearchIcon
+} from "../../icons";
+import CheckboxCheckIcon from "../../icons/internal/CheckboxCheckIcon.vue";
+import TreeDisclosureIcon from "../../icons/internal/TreeDisclosureIcon.vue";
 import type {
   KTreeKey,
   KTreeNode,
@@ -316,10 +322,7 @@ defineExpose({
       aria-label="树操作"
     >
       <label v-if="searchable" class="k-tree__search">
-        <svg viewBox="0 0 20 20" aria-hidden="true">
-          <circle cx="8.5" cy="8.5" r="5.5" />
-          <path d="m12.5 12.5 4 4" />
-        </svg>
+        <SearchIcon />
         <span class="k-tree__sr-only">搜索权限节点</span>
         <input
           v-model="search"
@@ -397,13 +400,9 @@ defineExpose({
           "
           @click.stop="toggleExpand(item.node)"
         >
-          <svg
-            viewBox="0 0 16 16"
-            aria-hidden="true"
+          <TreeDisclosureIcon
             :class="{ 'is-open': expandedSet.has(item.node.key) }"
-          >
-            <path d="m5.5 3.5 4.5 4.5-4.5 4.5" />
-          </svg>
+          />
         </button>
         <span v-else class="k-tree__spacer"></span>
 
@@ -418,13 +417,8 @@ defineExpose({
             @change="toggleCheck(item.node)"
           />
           <span aria-hidden="true">
-            <svg viewBox="0 0 16 16">
-              <path
-                v-if="isIndeterminate(item.node)"
-                d="M4 8h8"
-              />
-              <path v-else d="m3.5 8 3 3 6-6" />
-            </svg>
+            <MinusIcon v-if="isIndeterminate(item.node)" />
+            <CheckboxCheckIcon v-else />
           </span>
         </label>
 

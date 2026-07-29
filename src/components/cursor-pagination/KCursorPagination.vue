@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ChevronLeftIcon, ChevronRightIcon } from "../../icons";
 import KButton from "../button/KButton.vue";
 import type { KCursorPaginationProps } from "./types";
 
@@ -33,9 +34,7 @@ const emit = defineEmits<{
         @click="emit('previous')"
       >
         <template #leading>
-          <svg viewBox="0 0 16 16" aria-hidden="true">
-            <path d="m10 3-5 5 5 5" />
-          </svg>
+          <ChevronLeftIcon />
         </template>
         {{ previousLabel }}
       </KButton>
@@ -48,9 +47,7 @@ const emit = defineEmits<{
       >
         {{ nextLabel }}
         <template #trailing>
-          <svg viewBox="0 0 16 16" aria-hidden="true">
-            <path d="m6 3 5 5-5 5" />
-          </svg>
+          <ChevronRightIcon />
         </template>
       </KButton>
     </div>

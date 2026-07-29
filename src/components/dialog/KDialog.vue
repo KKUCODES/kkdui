@@ -5,6 +5,7 @@ import {
   useId,
   useSlots
 } from "vue";
+import { CloseIcon } from "../../icons";
 import { useModalLayer } from "../_internal/useModalLayer";
 import type {
   KDialogCloseReason,
@@ -144,9 +145,7 @@ useModalLayer({
               :disabled="isClosePending"
               @click="requestClose('close-button')"
             >
-              <svg viewBox="0 0 16 16" aria-hidden="true">
-                <path d="m4 4 8 8M12 4l-8 8" />
-              </svg>
+              <CloseIcon />
             </button>
           </header>
 

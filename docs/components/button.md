@@ -29,14 +29,15 @@ import ButtonStateSource from "../examples/button/ButtonStateDemo.vue?raw";
 
 ### Props
 
-| 属性       | 说明             | 类型                                              | 默认值      |
-| ---------- | ---------------- | ------------------------------------------------- | ----------- |
-| `variant`  | 操作层级         | `"primary" \| "secondary" \| "ghost" \| "danger"` | `"primary"` |
-| `size`     | 按钮尺寸         | `"small" \| "medium" \| "large"`                  | `"medium"`  |
-| `type`     | 原生按钮类型     | `"button" \| "submit" \| "reset"`                 | `"button"`  |
-| `loading`  | 是否处于加载状态 | `boolean`                                         | `false`     |
-| `disabled` | 是否禁用         | `boolean`                                         | `false`     |
-| `block`    | 是否占满容器宽度 | `boolean`                                         | `false`     |
+| 属性       | 说明                      | 类型                                              | 默认值      |
+| ---------- | ------------------------- | ------------------------------------------------- | ----------- |
+| `variant`  | 操作层级                  | `"primary" \| "secondary" \| "ghost" \| "danger"` | `"primary"` |
+| `size`     | 按钮尺寸                  | `"small" \| "medium" \| "large"`                  | `"medium"`  |
+| `type`     | 原生按钮类型              | `"button" \| "submit" \| "reset"`                 | `"button"`  |
+| `loading`  | 是否处于加载状态          | `boolean`                                         | `false`     |
+| `disabled` | 是否禁用                  | `boolean`                                         | `false`     |
+| `block`    | 是否占满容器宽度          | `boolean`                                         | `false`     |
+| `icon`     | 内容前的 SVG Vue 图标组件 | `Component`                                       | —           |
 
 ### Events
 
@@ -46,8 +47,9 @@ import ButtonStateSource from "../examples/button/ButtonStateDemo.vue?raw";
 
 ### Slots
 
-| 插槽       | 说明               |
-| ---------- | ------------------ |
-| `default`  | 按钮文字或主要内容 |
-| `leading`  | 内容前区域         |
-| `trailing` | 内容后区域         |
+| 插槽       | 说明                           |
+| ---------- | ------------------------------ |
+| `default`  | 按钮文字或主要内容             |
+| `icon`     | 内容前图标，优先于 `icon` 属性 |
+| `leading`  | 内容前区域                     |
+| `trailing` | 内容后区域                     |

@@ -9,6 +9,7 @@ import {
   useId,
   type CSSProperties
 } from "vue";
+import { CheckIcon, ChevronDownIcon } from "../../icons";
 import type {
   KMultiSelectOption,
   KMultiSelectProps,
@@ -229,7 +230,7 @@ defineExpose({ focus: () => input.value?.focus(), clear, open: openList, close: 
         @mousedown.prevent
         @click="clear"
       >×</button>
-      <svg class="k-multi-select__chevron" viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4" /></svg>
+      <ChevronDownIcon class="k-multi-select__chevron" />
     </div>
     <input
       v-for="value in model"
@@ -261,7 +262,7 @@ defineExpose({ focus: () => input.value?.focus(), clear, open: openList, close: 
         @click="toggle(option)"
       >
         <span class="k-multi-select__check" aria-hidden="true">
-          <svg v-if="isSelected(option.value)" viewBox="0 0 16 16"><path d="m3 8 3 3 7-7" /></svg>
+          <CheckIcon v-if="isSelected(option.value)" />
         </span>
         <span class="k-multi-select__option-content">
           <span>{{ option.label }}</span>

@@ -5,6 +5,7 @@ import {
   ref,
   watch
 } from "vue";
+import LogSearchIcon from "../../icons/internal/LogSearchIcon.vue";
 import KButton from "../button/KButton.vue";
 import KInput from "../input/KInput.vue";
 import type {
@@ -140,10 +141,7 @@ async function copyVisibleLogs(): Promise<void> {
         @update:model-value="emit('update:query', $event)"
       >
         <template #prefix>
-          <svg viewBox="0 0 16 16" aria-hidden="true">
-            <circle cx="7" cy="7" r="4.2" />
-            <path d="m10.2 10.2 3.3 3.3" />
-          </svg>
+          <LogSearchIcon />
         </template>
       </KInput>
       <KButton

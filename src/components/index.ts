@@ -118,6 +118,9 @@ export type {
   KInputType
 } from "./input/types";
 
+export { default as KIcon } from "./icon/KIcon.vue";
+export type { KIconProps, KIconSize } from "./icon/types";
+
 export { default as KLogViewer } from "./log-viewer/KLogViewer.vue";
 export type {
   KLogEntry,

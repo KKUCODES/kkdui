@@ -3,6 +3,7 @@ import {
   computed,
   useId
 } from "vue";
+import FormChevronIcon from "../../icons/internal/FormChevronIcon.vue";
 import type { KFormSectionProps } from "./types";
 
 const props = withDefaults(defineProps<KFormSectionProps>(), {
@@ -64,13 +65,9 @@ function toggle(): void {
               <slot name="description">{{ description }}</slot>
             </span>
           </span>
-          <svg
-            viewBox="0 0 16 16"
-            aria-hidden="true"
+          <FormChevronIcon
             :class="{ 'is-collapsed': isCollapsed }"
-          >
-            <path d="m3.5 6 4.5 4 4.5-4" />
-          </svg>
+          />
         </button>
         <span v-else class="k-form-section__heading-copy">
           <span class="k-form-section__title">

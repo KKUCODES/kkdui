@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ErrorCircleIcon } from "../../icons";
 import KStateShell from "../_internal/KStateShell.vue";
 import KButton from "../button/KButton.vue";
 import type { KErrorStateProps } from "./types";
@@ -27,11 +28,7 @@ const emit = defineEmits<{
   >
     <template #icon>
       <slot name="icon">
-        <svg viewBox="0 0 24 24">
-          <circle cx="12" cy="12" r="8.5" />
-          <path d="M12 7.5v5" />
-          <path d="M12 16.5h.01" />
-        </svg>
+        <ErrorCircleIcon />
       </slot>
     </template>
 

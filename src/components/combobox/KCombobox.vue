@@ -10,6 +10,8 @@ import {
   watch,
   type CSSProperties
 } from "vue";
+import { CheckIcon, ChevronDownIcon } from "../../icons";
+import SearchSmallIcon from "../../icons/internal/SearchSmallIcon.vue";
 import type {
   KComboboxOption,
   KComboboxProps,
@@ -238,9 +240,7 @@ defineExpose({ focus: () => input.value?.focus(), clear, open: openList, close: 
     :style="rootStyle"
   >
     <div class="k-combobox__field">
-      <svg class="k-combobox__search" viewBox="0 0 16 16" aria-hidden="true">
-        <circle cx="7" cy="7" r="4.25" /><path d="m10.2 10.2 3 3" />
-      </svg>
+      <SearchSmallIcon class="k-combobox__search" />
       <input
         :id="inputId"
         ref="input"
@@ -275,9 +275,7 @@ defineExpose({ focus: () => input.value?.focus(), clear, open: openList, close: 
         @mousedown.prevent
         @click="clear"
       >×</button>
-      <svg class="k-combobox__chevron" viewBox="0 0 16 16" aria-hidden="true">
-        <path d="m4 6 4 4 4-4" />
-      </svg>
+      <ChevronDownIcon class="k-combobox__chevron" />
     </div>
     <div
       v-if="open"
@@ -306,7 +304,7 @@ defineExpose({ focus: () => input.value?.focus(), clear, open: openList, close: 
         >
           <span>{{ option.label }}</span>
           <small v-if="option.description">{{ option.description }}</small>
-          <svg v-if="model === option.value" viewBox="0 0 16 16" aria-hidden="true"><path d="m3 8 3 3 7-7" /></svg>
+          <CheckIcon v-if="model === option.value" />
         </button>
       </template>
       <div v-else class="k-combobox__state">

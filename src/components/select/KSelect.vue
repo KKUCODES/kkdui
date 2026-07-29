@@ -6,6 +6,7 @@ import {
   useId,
   type CSSProperties
 } from "vue";
+import { ChevronDownIcon, CloseIcon } from "../../icons";
 import type {
   KSelectProps,
   KSelectValue
@@ -130,18 +131,12 @@ defineExpose({
       aria-label="清除选择"
       @click="clear"
     >
-      <svg viewBox="0 0 16 16" aria-hidden="true">
-        <path d="m4 4 8 8M12 4l-8 8" />
-      </svg>
+      <CloseIcon />
     </button>
 
-    <svg
+    <ChevronDownIcon
       class="k-select__indicator"
-      viewBox="0 0 16 16"
-      aria-hidden="true"
-    >
-      <path d="m4 6 4 4 4-4" />
-    </svg>
+    />
   </div>
 </template>
 

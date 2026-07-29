@@ -9,6 +9,8 @@ import {
   watchEffect,
   type CSSProperties
 } from "vue";
+import SortIcon from "../../icons/internal/SortIcon.vue";
+import TableExpandIcon from "../../icons/internal/TableExpandIcon.vue";
 import KButton from "../button/KButton.vue";
 import type {
   KTableColumn,
@@ -427,28 +429,12 @@ function handleRowKeydown(
                   >
                     <span>{{ column.title }}</span>
                   </slot>
-                  <svg
+                  <SortIcon
                     class="k-table__sort-icon"
-                    viewBox="0 0 16 16"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="m4 6 4-4 4 4"
-                      :class="{
-                        'is-active':
-                          sort?.key === column.key &&
-                          sort.direction === 'asc'
-                      }"
-                    />
-                    <path
-                      d="m4 10 4 4 4-4"
-                      :class="{
-                        'is-active':
-                          sort?.key === column.key &&
-                          sort.direction === 'desc'
-                      }"
-                    />
-                  </svg>
+                    :direction="
+                      sort?.key === column.key ? sort.direction : undefined
+                    "
+                  />
                 </button>
                 <slot
                   v-else
@@ -563,9 +549,7 @@ function handleRowKeydown(
                   "
                   @click="toggleRowExpansion(row)"
                 >
-                  <svg viewBox="0 0 16 16" aria-hidden="true">
-                    <path d="m5 3 5 5-5 5" />
-                  </svg>
+                  <TableExpandIcon />
                 </button>
               </td>
               <td
@@ -979,15 +963,6 @@ tbody tr.is-interactive:focus-visible {
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 1.5;
-}
-
-.k-table__sort-icon path {
-  opacity: 0.22;
-}
-
-.k-table__sort-icon path.is-active {
-  color: var(--k-color-primary, #257360);
-  opacity: 1;
 }
 
 td.is-ellipsis {

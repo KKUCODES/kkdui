@@ -4,6 +4,8 @@ import {
   onBeforeUnmount,
   ref
 } from "vue";
+import { CopyIcon } from "../../icons";
+import CheckLargeIcon from "../../icons/internal/CheckLargeIcon.vue";
 import type {
   KCopyButtonProps,
   KCopyButtonState
@@ -88,23 +90,14 @@ defineExpose({ copy });
     :title="iconOnly ? currentLabel : undefined"
     @click="copy"
   >
-    <svg
+    <CopyIcon
       v-if="state !== 'success'"
       class="k-copy-button__icon"
-      viewBox="0 0 20 20"
-      aria-hidden="true"
-    >
-      <rect x="6.5" y="6.5" width="9" height="10" rx="2" />
-      <path d="M13.5 6.5v-1a2 2 0 0 0-2-2h-7a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" />
-    </svg>
-    <svg
+    />
+    <CheckLargeIcon
       v-else
       class="k-copy-button__icon"
-      viewBox="0 0 20 20"
-      aria-hidden="true"
-    >
-      <path d="m4 10.2 3.6 3.6L16 5.7" />
-    </svg>
+    />
     <span v-if="!iconOnly" class="k-copy-button__label">
       <slot :state="state" :label="currentLabel">
         {{ currentLabel }}

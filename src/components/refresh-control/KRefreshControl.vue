@@ -4,6 +4,7 @@ import {
   onBeforeUnmount,
   watch
 } from "vue";
+import { ChevronDownIcon, RefreshIcon } from "../../icons";
 import KButton from "../button/KButton.vue";
 import type {
   KRefreshControlProps,
@@ -105,9 +106,7 @@ function togglePaused(): void {
       @click="emit('refresh', 'manual')"
     >
       <template #leading>
-        <svg class="k-refresh-control__icon" viewBox="0 0 16 16" aria-hidden="true">
-          <path d="M13 5.5A5.5 5.5 0 1 0 13.2 10M13 2.5v3h-3" />
-        </svg>
+        <RefreshIcon class="k-refresh-control__icon" />
       </template>
       刷新
     </KButton>
@@ -128,9 +127,7 @@ function togglePaused(): void {
           每 {{ seconds }} 秒
         </option>
       </select>
-      <svg viewBox="0 0 16 16" aria-hidden="true">
-        <path d="m4 6 4 4 4-4" />
-      </svg>
+      <ChevronDownIcon />
     </label>
 
     <KButton

@@ -3,6 +3,7 @@ import {
   computed,
   useId
 } from "vue";
+import { ChevronDownIcon } from "../../icons";
 import KButton from "../button/KButton.vue";
 import type {
   KTabItem,
@@ -171,9 +172,7 @@ function handleMobileChange(event: Event): void {
           {{ item.label }}{{ item.badge !== undefined ? ` (${item.badge})` : "" }}
         </option>
       </select>
-      <svg viewBox="0 0 16 16" aria-hidden="true">
-        <path d="m4 6 4 4 4-4" />
-      </svg>
+      <ChevronDownIcon />
     </label>
 
     <div class="k-tabs__panels">

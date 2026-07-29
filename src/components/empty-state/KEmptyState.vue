@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { EmptyBoxIcon } from "../../icons";
 import KStateShell from "../_internal/KStateShell.vue";
 import KButton from "../button/KButton.vue";
 import type { KEmptyStateProps } from "./types";
@@ -23,11 +24,7 @@ const emit = defineEmits<{
   >
     <template #icon>
       <slot name="icon">
-        <svg viewBox="0 0 24 24">
-          <path d="M4 7.5h16v11H4z" />
-          <path d="M8 7.5V5h8v2.5" />
-          <path d="M9 12h6" />
-        </svg>
+        <EmptyBoxIcon />
       </slot>
     </template>
 

@@ -1,5 +1,6 @@
 import { mount } from "@vue/test-utils";
 import { describe, expect, it } from "vitest";
+import { SearchIcon } from "../../icons";
 import KButton from "./KButton.vue";
 
 describe("KButton", () => {
@@ -31,5 +32,20 @@ describe("KButton", () => {
 
     await button.trigger("click");
     expect(wrapper.emitted("click")).toBeUndefined();
+  });
+
+  it("renders an icon component before its content", () => {
+    const wrapper = mount(KButton, {
+      props: {
+        icon: SearchIcon
+      },
+      slots: {
+        default: "搜索"
+      }
+    });
+
+    expect(wrapper.findComponent(SearchIcon).exists()).toBe(true);
+    expect(wrapper.get(".k-button__leading").text()).toBe("");
+    expect(wrapper.text()).toContain("搜索");
   });
 });

@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, markRaw, toRaw } from "vue";
+import KIcon from "../icon/KIcon.vue";
 import type { KButtonProps } from "./types";
 
 const props = withDefaults(defineProps<KButtonProps>(), {
@@ -16,6 +17,9 @@ const emit = defineEmits<{
 }>();
 
 const isDisabled = computed(() => props.disabled || props.loading);
+const iconComponent = computed(() =>
+  props.icon ? markRaw(toRaw(props.icon)) : undefined
+);
 
 function handleClick(event: MouseEvent): void {
   if (isDisabled.value) {
@@ -41,6 +45,13 @@ function handleClick(event: MouseEvent): void {
     @click="handleClick"
   >
     <span v-if="loading" class="k-button__spinner" aria-hidden="true"></span>
+    <span v-else-if="$slots.icon || icon" class="k-button__leading">
+      <KIcon>
+        <slot name="icon">
+          <component :is="iconComponent" />
+        </slot>
+      </KIcon>
+    </span>
     <span v-else-if="$slots.leading" class="k-button__leading">
       <slot name="leading" />
     </span>

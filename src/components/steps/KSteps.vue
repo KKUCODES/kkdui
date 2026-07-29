@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
+import StepCheckIcon from "../../icons/internal/StepCheckIcon.vue";
 import type {
   KStepItem,
   KStepsProps,
@@ -68,12 +69,9 @@ function selectStep(item: KStepItem, index: number): void {
         @click="selectStep(item, index)"
       >
         <span class="k-steps__marker" aria-hidden="true">
-          <svg
+          <StepCheckIcon
             v-if="getStatus(item, index) === 'complete'"
-            viewBox="0 0 16 16"
-          >
-            <path d="m3.2 8.2 3 3 6.6-6.5" />
-          </svg>
+          />
           <span v-else>{{ index + 1 }}</span>
         </span>
         <span class="k-steps__copy">
