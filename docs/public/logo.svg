@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title id="title">KKDUI</title>
+  <defs>
+    <linearGradient id="surface" x1="16" y1="8" x2="112" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#318a72"/>
+      <stop offset="1" stop-color="#174c40"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="34" fill="url(#surface)"/>
+  <path d="M37 32v64M39 68l25-35M39 67l27 29M69 32v64M71 68l25-35M71 67l27 29" fill="none" stroke="#fff" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

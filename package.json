@@ -24,6 +24,9 @@
     "build": "vite build && vue-tsc -p tsconfig.build.json --emitDeclarationOnly",
     "typecheck": "vue-tsc -p tsconfig.json --noEmit",
     "test": "vitest run",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
     "pack:check": "npm pack --dry-run",
     "prepublishOnly": "npm run typecheck && npm test && npm run build"
   },
@@ -43,7 +46,7 @@
   "bugs": {
     "url": "https://github.com/KKUCODES/kkdui/issues"
   },
-  "homepage": "https://github.com/KKUCODES/kkdui#readme",
+  "homepage": "https://kkucodes.github.io/kkdui/",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
@@ -58,6 +61,7 @@
     "jsdom": "^26.1.0",
     "typescript": "^5.5.4",
     "vite": "^6.0.7",
+    "vitepress": "^1.6.4",
     "vitest": "^2.1.9",
     "vue": "^3.5.13",
     "vue-tsc": "^2.2.0"

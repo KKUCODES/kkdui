@@ -2,6 +2,8 @@
 
 KK 的 Vue 3 UI 组件库，为后台管理系统而设计。组件只依赖 Vue，不依赖路由、状态管理、具体业务或图表库。
 
+[在线文档](https://kkucodes.github.io/kkdui/) · [npm](https://www.npmjs.com/package/kkdui) · [GitHub](https://github.com/KKUCODES/kkdui)
+
 ## 安装
 
 ```bash
