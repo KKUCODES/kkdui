@@ -79,6 +79,17 @@ import "kkdui/style.css";
 `KSegmentedControl`，普通下拉用 `KSelect`，可搜索单选用 `KCombobox`，
 多值筛选用 `KMultiSelect`，不通过一个组件的视觉变体混用。
 
+## 发布
+
+`main` 分支使用 GitHub Actions 和 semantic-release 自动测试、构建、生成版本并发布 npm：
+
+- `fix:` 触发补丁版本，例如 `0.1.0` → `0.1.1`。
+- `feat:` 触发次版本，例如 `0.1.0` → `0.2.0`。
+- `BREAKING CHANGE:` 或带 `!` 的提交触发主版本。
+- `docs:`、`test:`、`chore:`、`ci:` 默认不发布。
+
+npm 发布通过 GitHub OIDC Trusted Publishing 完成，不在仓库中保存 npm token。
+
 ## 受控状态约定
 
 筛选、弹层和导航状态统一使用 Vue `v-model`，业务层保留数据与请求控制权：
