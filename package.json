@@ -24,7 +24,8 @@
     "build": "vite build && vue-tsc -p tsconfig.build.json --emitDeclarationOnly",
     "typecheck": "vue-tsc -p tsconfig.json --noEmit",
     "test": "vitest run",
-    "pack:check": "npm pack --dry-run"
+    "pack:check": "npm pack --dry-run",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
   },
   "keywords": [
     "kkdui",
@@ -34,7 +35,15 @@
     "ui",
     "admin"
   ],
-  "license": "UNLICENSED",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KKUCODES/kkdui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KKUCODES/kkdui/issues"
+  },
+  "homepage": "https://github.com/KKUCODES/kkdui#readme",
   "publishConfig": {
     "access": "public"
   },
